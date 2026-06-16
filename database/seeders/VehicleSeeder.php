@@ -1,0 +1,22 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Vehicle;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class VehicleSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        Vehicle::create([
+            'plate' => 'ABC1D23',
+            'model' => 'Focus',
+            'capacity' => 5
+        ]);
+    }
+}
