@@ -14,12 +14,24 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        //Criar um adm
-        User::create([
-            'name'=> 'Administrador',
-            'email' => 'adm@example.com',
-            'password' =>Hash::make('password'),
-            'must_change_password' => true,
-        ]);
+        // updateOrCreate: se o e-mail já existir, reseta pra senha original;
+        // se não existir, cria. Pode rodar esse seeder quantas vezes quiser.
+        User::updateOrCreate(
+            ['email' => 'adm@example.com'],
+            [
+                'name' => 'Administrador',
+                'password' => Hash::make('password'),
+                'must_change_password' => true,
+            ]
+        );
+
+        User::updateOrCreate(
+            ['email' => 'gestor@example.com'],
+            [
+                'name' => 'Gestor',
+                'password' => Hash::make('password'),
+                'must_change_password' => true,
+            ]
+        );
     }
 }
