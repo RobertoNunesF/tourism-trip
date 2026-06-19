@@ -7,6 +7,7 @@
         ['label' => 'Viagens',      'route' => 'trips.index',        'icon' => 'map'],
         ['label' => 'Contratos',    'route' => '#',    'icon' => 'document-text'],
         ['label' => 'Pacotes',      'route' => '#',      'icon' => 'archive-box'],
+        ['label' => 'Usuários',     'route' => 'users.index',        'icon' => 'shield-check'],
     ];
 @endphp
 
